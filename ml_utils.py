@@ -1,10 +1,13 @@
 from sklearn import datasets
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
+#from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score
 
 # define a Gaussain NB classifier
 clf = GaussianNB()
+#clf = KNeighborsClassifier(n_neighbors=4)
+#with knn(n=4) the accuracy_score is 0.967
 
 # define the class encodings and reverse encodings
 classes = {0: "Iris Setosa", 1: "Iris Versicolour", 2: "Iris Virginica"}
@@ -29,6 +32,7 @@ def predict(query_data):
     x = list(query_data.dict().values())
     prediction = clf.predict([x])[0]
     print(f"Model prediction: {classes[prediction]}")
+    
     return classes[prediction]
 
 # function to retrain the model as part of the feedback loop
