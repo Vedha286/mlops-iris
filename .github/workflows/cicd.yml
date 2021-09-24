@@ -18,7 +18,13 @@ jobs:
       - name: Run pytest
         run: |
           pytest
-
+      # Codecov
+      - name: "Upload coverage to Codecov"
+        uses: codecov/codecov-action@v2
+        with:
+          fail_ci_if_error: true
+          token: ${{ df7645a3-31e5-400e-95a9-6c7e256c703f }} # not required for public repos
+  
   upload_zip:
     runs-on: ubuntu-latest
     needs: build
