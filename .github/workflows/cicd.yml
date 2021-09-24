@@ -22,7 +22,13 @@ jobs:
       - name: "Upload coverage to Codecov"
         uses: codecov/codecov-action@v2
         with:
-          fail_ci_if_error: true
+          fail_ci_if_error: true 
+      - name: Run tests and collect coverage
+        run: |
+          coverage run test_app.py
+          coverage xml
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v2
   
   upload_zip:
     runs-on: ubuntu-latest
