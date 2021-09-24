@@ -18,7 +18,14 @@ jobs:
       - name: Run pytest
         run: |
           pytest
-
+      - name: Test with pytest
+        run: |
+          pip install pytest pytest-cov
+          python -m pytest --cov=./myapp --cov-report xml
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          path--to-lcov: coverage.xml
   upload_zip:
     runs-on: ubuntu-latest
     needs: build
