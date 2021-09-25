@@ -21,7 +21,7 @@ jobs:
      
       - name: Run tests and collect coverage
         run: |
-          coverage run test_app.py
+          coverage run  test_app.py.py
           coverage xml
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v2
