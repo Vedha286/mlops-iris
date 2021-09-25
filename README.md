@@ -1,6 +1,10 @@
 # ML-Ops Demo/Assignment
 
 [![codecov](https://codecov.io/gh/Vedha286/mlops-iris/branch/master/graph/badge.svg?token=REKR951Y9K)](https://codecov.io/gh/Vedha286/mlops-iris)
+[![codecov.io](https://codecov.io/github/codecov/codecov-python/coverage.svg?branch=master)](https://codecov.io/github/codecov/codecov-python)
+![PyPI](https://img.shields.io/pypi/v/codecov)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fcodecov%2Fcodecov-python.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fcodecov%2Fcodecov-python?ref=badge_shield)
 
 This repository contains code which demonstrates ML-Ops using a `FastAPI` application which predicts the flower class using the IRIS dataset (https://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html)
 
