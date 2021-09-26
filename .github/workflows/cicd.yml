@@ -16,9 +16,9 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Run pytest
+      - name: Run pytest with pytest-cov
         run: |
-          pytest test.py --cov=./ --cov-fail-under=90
+          pytest --cov=./ 
       - name: Run tests and collect coverage
         run: |
           pytest --cov=ml_utils main.py test.py --cov-report=xml
