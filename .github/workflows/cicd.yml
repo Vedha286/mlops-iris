@@ -5,7 +5,11 @@ on: [pull_request, push]
 jobs:
   build:
     runs-on: ubuntu-latest
-   
+    strategy:
+      matrix:
+        python: ['3.7', '3.8', '3.9']
+    env:
+      PYTHON: ${{matrix.python}}
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v2
