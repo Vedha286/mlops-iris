@@ -1,6 +1,6 @@
 # ML-Ops Demo/Assignment
 
-[![codecov](https://codecov.io/gh/Vedha286/mlops-iris/branch/master/graph/badge.svg?token=REKR951Y9K)](https://codecov.io/gh/Vedha286/mlops-iris)
+[![codecov](https://codecov.io/gh/Vedha286/mlops-iris/branch/coverage/graph/badge.svg?token=REKR951Y9K)](https://codecov.io/gh/Vedha286/mlops-iris)
 [![codecov.io](https://codecov.io/github/codecov/codecov-python/coverage.svg?branch=master)](https://codecov.io/github/codecov/codecov-python)
 ![PyPI](https://img.shields.io/pypi/v/codecov)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
