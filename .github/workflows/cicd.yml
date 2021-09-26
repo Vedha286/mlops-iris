@@ -19,13 +19,6 @@ jobs:
       - name: Run pytest
         run: |
           pytest test.py --cov=./ --cov-fail-under=90
-    # (Other steps go here)
-      - name: "Upload coverage to Codecov"
-        uses: codecov/codecov-action@v2.1.0
-        with:
-          fail_ci_if_error: true
-          token: df7645a3-31e5-400e-95a9-6c7e256c703f
-          
       - name: Codecov
         # You may pin to the exact commit or the version.
         # uses: codecov/codecov-action@f32b3a3741e1053eb607407145bc9619351dc93b
@@ -37,6 +30,14 @@ jobs:
           files: main.py,test.py,ml_utils.py, ./coverage
           
           fail_ci_if_error: true
+    # (Other steps go here)
+      - name: "Upload coverage to Codecov"
+        uses: codecov/codecov-action@v2.1.0
+        with:
+          fail_ci_if_error: true
+          token: df7645a3-31e5-400e-95a9-6c7e256c703f
+          
+     
           
      
   upload_zip:
