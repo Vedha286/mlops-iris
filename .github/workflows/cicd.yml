@@ -34,7 +34,7 @@ jobs:
           # Repository upload token - get it from codecov.io. Required only for private repositories
           token: df7645a3-31e5-400e-95a9-6c7e256c703f
           # Comma-separated list of files to upload
-          files: main.py,test.py,ml_utils.py
+          files: main.py,test.py,ml_utils.py, ./coverage.xml
           
           fail_ci_if_error: true
           
