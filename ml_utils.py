@@ -8,8 +8,6 @@ from sklearn.tree import DecisionTreeClassifier
 GaussianNBClf = GaussianNB()
 GaussianNBClf_acc = 0.0
 
-DecisionTreeClf = DecisionTreeClassifier(max_depth = 3, random_state = 1)
-DecisionTreeClf_acc = 0.0
 
 # define the class encodings and reverse encodings
 classes = {0: "Iris Setosa", 1: "Iris Versicolour", 2: "Iris Virginica"}
@@ -26,28 +24,16 @@ def load_model():
 
     # calculate the print the accuracy score
     GaussianNBClf_acc = accuracy_score(y_test, GaussianNBClf.predict(X_test))
-
-    DecisionTreeClf.fit(X_train, y_train)
-    DecisionTreeClf_acc = accuracy_score(y_test, DecisionTreeClf.predict(X_test))
-
-
+    
     print(f"GaussianNB Classifier trained with accuracy: " + str(GaussianNBClf_acc))
-    print(f"Decision Tree Classifier trained with accuracy: " + str(DecisionTreeClf_acc))
-    if(DecisionTreeClf_acc > GaussianNBClf_acc):
-        print("Using Decision Tree Classifier")
-    else:
-        print("Using GaussianNB Classifier")
+    
 
 # function to predict the flower using the model
 def predict(query_data):
     print(query_data)
     x = list(query_data.dict().values())
     print(x)
-    prediction = -1
-    if(DecisionTreeClf_acc > GaussianNBClf_acc):
-        prediction = DecisionTreeClf.predict([x])[0]
-    else:
-        prediction = GaussianNBClf.predict([x])[0]
+    prediction = GaussianNBClf.predict([x])[0]
     print(f"Model prediction: {classes[prediction]}")
     return classes[prediction]
 
@@ -62,11 +48,5 @@ def retrain(data):
     # calculate the print the accuracy score
     GaussianNBClf_acc = accuracy_score(y_test, GaussianNBClf.predict(X_test))
 
-    DecisionTreeClf.fit(X_train, y_train)
-    DecisionTreeClf_acc = accuracy_score(y_test, DecisionTreeClf.predict(X_test))
     print(f"GaussianNB Classifier trained with accuracy: " + str(GaussianNBClf_acc))
-    print(f"Decision Tree Classifier trained with accuracy: " + str(DecisionTreeClf_acc))
-    if(DecisionTreeClf_acc > GaussianNBClf_acc):
-        print("Using Decision Tree Classifier")
-    else:
-        print("Using GaussianNB Classifier")
+   
