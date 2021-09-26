@@ -1,4 +1,6 @@
 # ML-Ops Demo/Assignment
+[![codecov](https://codecov.io/gh/Vedha286/mlops-iris/branch/master/graph/badge.svg?token=REKR951Y9K)](https://codecov.io/gh/Vedha286/mlops-iris)
+
 
 [![codecov](https://codecov.io/gh/Vedha286/mlops-iris/branch/master/graph/badge.svg?token=df7645a3-31e5-400e-95a9-6c7e256c703f)](https://codecov.io/gh/Vedha286/mlops-iris)
 [![codecov.io](https://codecov.io/github/codecov/codecov-python/coverage.svg?branch=master)](https://codecov.io/github/codecov/codecov-python)
