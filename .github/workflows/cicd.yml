@@ -21,7 +21,7 @@ jobs:
           pytest test.py --cov=./ --cov-fail-under=90
     # (Other steps go here)
       - name: "Upload coverage to Codecov"
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v2.1.0
         with:
           fail_ci_if_error: true
           token: df7645a3-31e5-400e-95a9-6c7e256c703f
