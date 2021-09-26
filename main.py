@@ -47,6 +47,7 @@ def ping():
 # Payload: QueryIn containing the parameters
 # Response: QueryOut containing the flower_class predicted (200)
 def predict_flower(query_data: QueryIn):
+    print(query_data)
     output = {
         "flower_class": predict(query_data),
         "timestamp ": datetime.timestamp(datetime.now())

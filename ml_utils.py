@@ -40,7 +40,9 @@ def load_model():
 
 # function to predict the flower using the model
 def predict(query_data):
+    print(query_data)
     x = list(query_data.dict().values())
+    print(x)
     prediction = -1
     if(DecisionTreeClf_acc > GaussianNBClf_acc):
         prediction = DecisionTreeClf.predict([x])[0]
