@@ -21,7 +21,7 @@ jobs:
           pytest test.py --cov=./ --cov-fail-under=90
       - name: Run tests and collect coverage
         run: |
-          coverage run test.py
+          pytest --cov=ml_utils main.py test.py
           coverage xml
       - name: Codecov
         # You may pin to the exact commit or the version.
