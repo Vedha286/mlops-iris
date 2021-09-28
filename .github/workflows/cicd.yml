@@ -73,8 +73,8 @@ jobs:
       - name: something
         uses: actions/upload-artifact@v1.0.0
         with:
-          name: my-artifact
-          path: ./world.txt
+          name: report
+          path: ./reports.txt
           
      
   upload_zip:
