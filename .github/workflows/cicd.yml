@@ -5,7 +5,6 @@ on: [pull_request, push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v2
@@ -27,9 +26,16 @@ jobs:
         python: ['3.7', '3.8', '3.9']
     env:
       PYTHON: ${{matrix.python}}
-    needs: build
-    if: ${{ github.event_name == 'push' }}
     steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+      - name: Setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{matrix.python}}
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
       - name: Run tests and collect coverage
         run: |
           pytest --cov=./
