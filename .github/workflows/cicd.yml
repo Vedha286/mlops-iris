@@ -5,11 +5,7 @@ on: [pull_request, push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python: ['3.7', '3.8', '3.9']
-    env:
-      PYTHON: ${{matrix.python}}
+    
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v2
@@ -23,6 +19,17 @@ jobs:
       - name: Run pytest
         run: |
           pytest
+        
+  codecoverage:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.7', '3.8', '3.9']
+    env:
+      PYTHON: ${{matrix.python}}
+    needs: build
+    if: ${{ github.event_name == 'push' }}
+    steps:
       - name: Run tests and collect coverage
         run: |
           pytest --cov=./
@@ -33,10 +40,7 @@ jobs:
           # Comma-separated list of files to upload
           files: main.py,app_test.py,ml_utils.py, ./coverage
           fail_ci_if_error: true
-          
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v1    
-          
+ 
      
   upload_zip:
     runs-on: ubuntu-latest
