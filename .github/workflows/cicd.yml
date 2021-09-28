@@ -62,15 +62,15 @@ jobs:
         with:
           context: .
           push: false
-          tags: localbuild/testimage:latest
+          tags: vedha/submissionimage:latest
           load: true
       - name: Scan image
         uses: anchore/scan-action@v3
         with:
-          image: "localbuild/testimage:latest"
+          image: "vedha/submissionimage:latest"
           fail-build: false
           severity-cutoff: medium
-      - name: something
+      - name: Upload artifact
         uses: actions/upload-artifact@v1.0.0
         with:
           name: SARIF report
@@ -79,7 +79,10 @@ jobs:
      
   upload_zip:
     runs-on: ubuntu-latest
-    needs: build
+    needs: 
+      - build
+      - container-security
+      - codecoverage
     if: ${{ github.event_name == 'push' }}
     steps:
       - name: Checkout the repository
