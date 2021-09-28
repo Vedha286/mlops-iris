@@ -49,8 +49,7 @@ jobs:
   
   container-security:
     runs-on: ubuntu-latest
-    needs: build
-    if: ${{ github.event_name == 'push' }}
+   
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v2
